@@ -1,0 +1,18 @@
+https://www.pepcoding.com/resources/online-java-foundation/generic-tree/max-generic-tree-official/ojquestion
+
+
+public static int max(Node node) {
+    // write your code here
+    
+    int max=node.data;
+    
+    for(Node child:node.children){
+        int val=max(child);
+        if(max<val){
+            max=val;
+        }
+    }
+    
+    return max;
+    
+  }
