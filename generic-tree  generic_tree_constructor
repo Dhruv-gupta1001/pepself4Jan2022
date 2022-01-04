@@ -1,0 +1,28 @@
+https://www.pepcoding.com/resources/online-java-foundation/generic-tree/generic_tree_constructor/topic    ->  generic_tree_constructor
+
+ public static class Node
+  {
+    int data;  //for storing the data
+    ArrayList< Node> children = new ArrayList< >(); //for storing the child nodes
+  }
+  
+public static void main(String[] args)
+  {
+    Node root; //unique node for a tree
+    int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
+    Stack< Node> st = new Stack< >();
+    for(int idx=0;i<arr.length;i++){
+    if(idx!=-1){
+      Node node=new Node();
+      node.data=arr[idx];
+      if(st.size()>0){
+        st.peek().children.add(node);
+        st.push(node);
+      }else{
+        root=node;
+        st.push(root);
+      }
+    }else{
+      st.pop();
+    }
+  }
