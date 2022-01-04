@@ -1,0 +1,13 @@
+https://www.pepcoding.com/resources/online-java-foundation/generic-tree/size-generic-tree-official/ojquestion
+
+public static int size(Node node){
+    // write your code here
+    int s=0;
+    if(node.children.size()==0){
+        return 1;
+    }
+    for(Node a:node.children){
+        s+=size(a);
+    }
+    return s+1;
+  }
